@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body { 
+  font-family: "lucida grande",tahoma,verdana,arial,sans-serif; 
+  background: #fff;
+  color: #333;
+  padding-bottom: 25px;
+}
+
+a {
+  color: #3B5998;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p {
+  font-size: 12px;
+  margin: 10px 0;
+}
+
+ul li {
+	list-style-type: square;
+	margin: 0 0 0 15px;
+}
+
+li {
+  padding: 2px 5px;
+}
+
+.right {
+  float: right;
+}
+
+.amp {
+  font-family: Georgia;
+}
+
+.bolder { 
+  background: red; 
+  color: white; 
+  font-size: 20px; 
+  padding: 20px; 
+  width: 500px; 
+}
+
+textarea {
+  height: 400px;
+  width: 600px;
+}
+
+#main {
+  margin: 0 auto;
+  width: 730px;
+}
+
+#shadow {
+  background: transparent url() repeat-y scroll right top;
+  border-bottom: 1px solid #ddd;
+  margin: 2px 0px 0px 1px;
+  padding: 0;
+}
+
+#content {
+  margin: -2px 1px 0px -1px;
+  padding: 20px;
+}
+
+#logo {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.example {
+  margin-bottom: 40px;
+}
+
+.example h2 {
+  border-bottom: 1px solid #D8DFEA;
+  margin-bottom: 10px;
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+}
+
+.news {
+	background: #cfc;
+	border: 1px solid #9c9;
+	font-size: 11px;
+}
+.news h2{
+	border: none;
+	background: #aea;
+	padding: 0.5em;
+	font-size: 12px;
+}
+.news p, .news ul{
+	padding: 0.5em;
+}
+
+.example ul li {
+
+}
+
+.code {
+	background: #e6e6e6;
+	border-top: 1px solid #EBEBEB;
+	border-bottom: 1px solid #EBEBEB;
+	padding: 10px;
+	overflow: auto;
+	white-space: nowrap;
+	font-size: 11px;
+}
+
+.code h3 {
+  font-size: 11px;
+}
+
+.code code {
+	margin: 10px 0;
+	display: block;
+	font-family: Monaco, 'courier-new', monospace;
+}
+.code pre{
+	font-family: Monaco, 'courier-new', monospace;
+}
+
+
+#screenshots a {
+  border: none;
+}
+
+#screenshots img {
+  padding: 3px;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+
+#footer {
+  padding: 8px 10px 0px;
+  color: #777;
+  line-height: 16px;
+  font-size: 11px;
+}
+
+#footer p {
+  margin: 0;
+}
+
+
+
+#donate{
+	background: #ffc url(../images/coffee_48x48.png) no-repeat center left;
+	display: block;
+	border: 1px solid #E5E2D7;
+	width: 200px;
+	height: 58px;
+	color: #605D5B;
+	font-size: 11px;
+	padding: 5px 10px 5px 35px;
+	margin: 40px 40px 0 0;
+	text-decoration: none;
+	cursor: pointer;
+	
+	position: absolute;
+	right: 40px;
+	
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+}
+#donate:hover{
+	background-color: #45464B;
+	border-color: #0f0;
+	color: #fff;
+}

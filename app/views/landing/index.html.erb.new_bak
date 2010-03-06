@@ -1,0 +1,7 @@
+
+<section id="intro">  
+    <div id="map_canvas" style="width:100%; height: 400px"></div>  
+</section>         
+
+<footer><a href="/">HTML5 demos</a>/<a id="built" href="http://twitter.com/rem">@rem built this</a>/<a href="#view-source">view source</a></footer> 
+

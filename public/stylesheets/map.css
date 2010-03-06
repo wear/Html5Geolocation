@@ -1,0 +1,27 @@
+*{
+	margin:0;
+	padding:0;
+}            
+
+body{     
+	margin:0 auto;
+} 
+
+nav, section, header, footer {
+  display: block;
+}
+
+nav{
+   height:40px;
+   margin:0 auto;  
+   width:400px;
+}
+
+nav li{    
+	list-style:none;
+	float:left;
+}   
+
+nav li a{
+	margin:10px;
+}

@@ -1,0 +1,2 @@
+class HesinesController < ApplicationController
+end

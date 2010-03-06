@@ -1,0 +1,99 @@
+body{
+	background:#E7E7E7 url(/images/bg_mix.jpg) repeat-x top;
+	color: #202020;
+}
+a, a:visited{
+	color:#0021E3;
+	text-decoration:underline;
+}
+input{
+	border:1px solid #c3d7db;
+}
+select{
+	border:1px solid #c3d7db;
+}
+#header h2{
+	color:#FFF;
+}
+#content{
+	background:#FFF;
+}
+
+#sidebar h3{
+	background:#EEF6FE;
+}                 
+
+#topmenu a,#topmenu a:visited{
+	color:#FFF;
+	background:#28507F;
+}
+#topmenu a:hover{
+	color: #E7E7E7;
+}
+#topmenu .current a, #topmenu .current a:hover, #topmenu .current a:visited{
+	color:#62AC40;
+	background:#E7E7E7;
+	border-left: #FFF 1px solid;
+	border-right: #FFF 1px solid;
+}
+#top-panel{
+	background:#FFF;
+}
+table{
+	background:none;
+}  
+th{ border-top:2px solid #ABABAB;
+	text-align:left;
+	color:#999999; }
+td, th{
+	border-bottom:1px solid #ccc;
+} 
+thead{
+	background:#DEDEDE;
+}
+#styleswitcher{
+	background:#FFFFFF;
+}       
+
+#box h3{
+	color:#000;
+	border-bottom:1px solid #999;
+}        
+
+/***************
+	  Forms
+***************/
+
+form#form legend {
+	color:#294145;
+} 
+
+form#form fieldset.buttons {
+    border:0px solid #c3d7db;  
+}
+
+
+/***************
+	Home
+***************/
+
+#infobox h3{
+	border-bottom:1px solid #999;
+	color:#000;
+}
+
+#rightnow .reallynow {
+	background:#efefef;
+	color:#294145;
+}              
+
+
+#header .login{
+	float:right;
+}
+
+a.logout{      
+	position: absolute; 
+	top:0px; right:100px;
+	color:#fff;
+}

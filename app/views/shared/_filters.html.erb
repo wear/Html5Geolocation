@@ -1,0 +1,10 @@
+<div id="sidebar" class='ui-corner-all'>
+  <% @category_filters.sort.each do |filter, categories| %>
+    <span class='filter'><%= filter %></span>
+    <ul>
+    <% for cate in categories %>
+        <li class="category_#{cate.id}"><%=link_to cate.name,'#',:onclick => "javascript:get_cate('" + cate.name + "')" %></li>
+    <% end %>
+    </ul>
+  <% end %>
+</div>  

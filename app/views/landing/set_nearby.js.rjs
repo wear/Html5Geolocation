@@ -1,0 +1,2 @@
+#page.alert('This message is from Rails!')
+page.replace_html 'vendor_list',:partial => '/shared/vendor',:collection => @vendors

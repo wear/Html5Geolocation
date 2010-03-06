@@ -1,0 +1,24 @@
+<style type="text/css" media="screen">
+  .login{text-align:center;width:300px;margin:30px auto;}  
+  form.formtastic li label{ float:left;width:8em;font-size:12px;color:#514c48;text-align:right; margin-right:1em;} 
+</style>
+
+<div class='login'>
+<h1>登录</h1>    
+
+<% form_tag session_path,:class => 'formtastic' do -%>
+<li><%= label_tag 'login or mobile' %>
+<%= text_field_tag 'login', @login %></li>
+
+<li><%= label_tag 'password' %>
+<%= password_field_tag 'password', nil %></li>
+
+<!-- Uncomment this if you want this functionality
+<p><%= label_tag 'remember_me', 'Remember me' %>
+<%= check_box_tag 'remember_me', '1', @remember_me %></p>
+-->
+
+<li><%= submit_tag 'Log in' %></li>
+<% end -%>
+                                
+</div>

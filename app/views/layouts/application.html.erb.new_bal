@@ -1,0 +1,127 @@
+<!doctype html>  
+<html>
+<head>
+	<title>Html5 Demo</title>
+	<%= stylesheet_link_tag 'map' %> 
+	<%= javascript_include_tag 'jquery' %>
+	<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAE4ZY3N7fdhJWRXy60lvXGRT93PS680HyVJhiy1yIvJEbWVojiRT5l8JBTiLLir3oxDeRPeVS2Pg4Pw&hl=zh-CN" type="text/javascript"></script> 
+	<script type="text/javascript" charset="utf-8">
+	 var map;
+   var geocoder;
+   var address;
+   var center;
+   var marker;
+   var bounds; 
+   var gmarkers = [];
+	 var htmls = [];
+
+   function initialize(){
+       if (GBrowserIsCompatible()) {
+           map = new GMap2(document.getElementById("map_canvas"));
+           map.setCenter(new GLatLng(31.3225,121.445), 10);
+           map.setUIToDefault();
+           geocoder = new GClientGeocoder();
+           bounds = new GLatLngBounds(); 
+           if (!navigator.geolocation) {
+               alert('Sorry, your browser does not support Geo Services');
+           } 
+           else {
+               navigator.geolocation.getCurrentPosition(showMap); 
+               return false;
+           }
+       }
+   }
+
+   function showAddress(response){
+     if (!response || response.Status.code != 200) {
+         alert("Status Code:" + response.Status.code);
+       } else {   
+         place = response.Placemark[0];
+         html = place.address;
+         marker.openInfoWindowHtml(html); 
+       }
+   }              
+   
+   
+   function getAddress(latlng) {
+     if (latlng != null) {    
+       geocoder.getLocations(latlng, showAddress); 
+     }
+   }
+
+   function showMap(position){ 
+       map.clearOverlays();
+       var lat = position.coords.latitude;
+       var lng = position.coords.longitude;
+       center = new GLatLng(lat,lng) ;
+       map.setCenter(center, 16);
+       marker = new GMarker(center);
+       map.addOverlay(marker);
+       $.getJSON("/get_nearby", { lat: lat, lng: lng },function(data){
+         $.each(data,function(index,json){  
+            var vendor = json.vendor
+     				var point = new GLatLng(vendor.lat,vendor.lng);
+     				var html = "<p>" + vendor.name + "<br />" + vendor.address + "</p>";
+     				var id = vendor.id;      
+     				var icon = new GIcon();  
+     				icon.image = "/images/gicon.png";
+      			icon.shadow = "/images/gshadow.png";
+      			icon.iconSize=new GSize(32,32);
+      			icon.shadowSize=new GSize(56,32);
+      			icon.iconAnchor=new GPoint(16,32);
+      			icon.infoWindowAnchor=new GPoint(16,0);
+     				var new_marker = new GMarker(point,icon);
+     	     	map.addOverlay(new_marker);
+     	     	GEvent.addListener(new_marker, 'click', function() {
+              new_marker.openInfoWindowHtml(html);
+            });
+     	     	bounds.extend(point);
+         })    
+       });    
+   }        
+   
+   //  for google map 
+   function createMarker(point, html, id) {
+     var icon = new GIcon();
+   	 icon.image = "/images/gicon.png";
+   	 icon.shadow = "/images/gshadow.png";
+   	 icon.iconSize = new GSize(32,32);
+   	 icon.shadowSize = new GSize(56,32);
+   	 icon.iconAnchor = new GPoint(16,32);
+   	 icon.infoWindowAnchor = new GPoint(16,0);
+     var new_marker = new GMarker(point);
+     GEvent.addListener(new_marker, 'click', function() {
+       new_marker.openInfoWindowHtml(html);
+     });
+     
+     gmarkers[id] = marker;
+     htmls[id] = html;
+     
+     return marker;
+   } 
+   
+   function myclick(id) {
+     	gmarkers[id].openInfoWindowHtml(htmls[id]);
+   }
+	</script>
+</head>
+<body onload="initialize()" onunload="GUnload()">
+
+	<nav>
+    <ul>
+      <li><%=link_to 'asdf','/'%></li>
+      <li><%=link_to 'asdf','/'%></li>
+      <li><%=link_to 'asdf','/'%></li>
+    </ul>
+	</nav>  
+	<div id="container">
+    <%= yield %>
+	</div>
+	<aside>
+		<!-- Sidebar -->
+	</aside>
+	<footer>
+		<!-- Footer -->
+	</footer>
+</body>
+</html>

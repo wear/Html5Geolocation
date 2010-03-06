@@ -1,0 +1,24 @@
+Vendor.all.each{|v| v.address=v.address.split(/\W/)[0];v.save;}
+
+
+$.getJSON("/get_nearby", { lat: lat, lng: lng },function(data){
+  $.each(data,function(index,json){  
+     var vendor = json.vendor
+			var point = new GLatLng(vendor.lat,vendor.lng);
+			var html = "<p>" + vendor.name + "<br />" + vendor.address + "</p>";
+			var id = vendor.id;      
+			var icon = new GIcon();  
+			icon.image = "/images/gicon.png";
+			icon.shadow = "/images/gshadow.png";
+			icon.iconSize=new GSize(32,32);
+			icon.shadowSize=new GSize(56,32);
+			icon.iconAnchor=new GPoint(16,32);
+			icon.infoWindowAnchor=new GPoint(16,0);
+			var new_marker = new GMarker(point,icon);
+    	map.addOverlay(new_marker);
+    	GEvent.addListener(new_marker, 'click', function() {
+       new_marker.openInfoWindowHtml(html);
+     });
+    	bounds.extend(point);
+  })    
+});

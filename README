@@ -1,30 +1,3 @@
 local restaurant search using html5 geolocation
 
 by Stephen
-
-Thank You for Signing Up for a Google Maps API Key!
-Your key is:                                         
-
-ABQIAAAAE4ZY3N7fdhJWRXy60lvXGRQWasaKWFxC7p91BZjkcYdlnM3WsxT_w0nbcpjT-aUCrpYwBIhRbbJRhA
-
-Note: for more information on the API key system, consult http://code.google.com/apis/maps/faq.html#keysystem.
-How you use your key depends on what Maps API product or service you use. Your key is valid for use within the entire family of Google Maps API solutions. The following examples show how to use your key within the Maps API product family.
-JavaScript Maps API Example
-Within the JavaScript Maps API, place the key within the script tag when you load the API:
-...
-  // Note: you will need to replace the sensor parameter below with either an explicit true or false value.
-  <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true_or_false&amp;key=ABQIAAAAE4ZY3N7fdhJWRXy60lvXGRQWasaKWFxC7p91BZjkcYdlnM3WsxT_w0nbcpjT-aUCrpYwBIhRbbJRhA" type="text/javascript"></script>
-...
-See Loading the Maps API in the JavaScript Maps API documentation for more information.
-Maps API for Flash Example
-Within the Maps API for Flash, you may place the key within an MXML declaration, declare it directly within code as a Map.key property, or as a flashVars property within the HTML container. A sample MXML declaration is shown below.
-...
-  <maps:Map xmlns:maps="com.google.maps.*" id="map" mapevent_mapready="onMapReady(event)" width="100%" height="100%"
-    key="ABQIAAAAE4ZY3N7fdhJWRXy60lvXGRQWasaKWFxC7p91BZjkcYdlnM3WsxT_w0nbcpjT-aUCrpYwBIhRbbJRhA"/>
-...
-See Declaring Maps in the Maps API for Flash documentation for more information.
-HTTP Service Example
-Within a Maps API HTTP Service, such as the Static Maps API or Geocoding Service, place the key directly in the request URL:
-http://maps.google.com/maps/geo?q=1600+Amphitheatre+Parkway,+Mountain+View,+CA&output=json&oe=utf8\
-&sensor=true_or_false&key=ABQIAAAAE4ZY3N7fdhJWRXy60lvXGRQWasaKWFxC7p91BZjkcYdlnM3WsxT_w0nbcpjT-aUCrpYwBIhRbbJRhA
-Note that for all examples, you must replace the sensor parameter with a valid value, based on whether your application uses a sensor to determine a user's location. Check out the API documentation for more information.
